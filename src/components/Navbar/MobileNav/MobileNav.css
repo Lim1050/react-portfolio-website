@@ -1,0 +1,44 @@
+.mobile-menu {
+  width: 100vw; /* Lebar menu mobile */
+  height: 100vh; /* Tinggi menu mobile */
+  display: none; /* Menyembunyikan menu mobile secara default */
+  background-color: rgba(0, 0, 0, 0.3); /* Latar belakang menu mobile */
+  position: fixed; /* Memperbaiki posisi menu mobile */
+  left: 0; /* Menempatkan menu mobile di sisi kiri */
+  top: 0; /* Menempatkan menu mobile di bagian atas */
+  z-index: 999 !important; /* Menempatkan menu mobile di atas elemen lain */
+  opacity: 0; /* Awalnya tidak terlihat */
+  box-shadow: 0px 29px 80px rgba(0, 0, 0, 0.3); /* Bayangan pada menu mobile */
+  transition: all 0.3s ease; /* Transisi untuk efek muncul */
+  transform: translateX(-100vw); /* Menggeser menu mobile ke kiri */
+}
+
+.mobile-menu-container {
+  width: 60vw; /* Lebar kontainer menu mobile */
+  height: 100vh; /* Tinggi kontainer menu mobile */
+  background-color: #342864; /* Latar belakang kontainer menu mobile */
+  padding: 2rem; /* Padding kontainer menu mobile */
+}
+
+.mobile-menu.active {
+  opacity: 1; /* Menampilkan menu mobile */
+  transform: translateX(0); /* Mengembalikan posisi menu mobile ke tampilan */
+}
+
+.mobile-menu img {
+  margin-bottom: 3rem; /* Margin bawah untuk gambar logo */
+}
+
+.mobile-menu ul {
+  display: flex; /* Menggunakan flexbox untuk tata letak item dalam daftar */
+  flex-direction: column; /* Mengatur arah kolom untuk item dalam daftar */
+  gap: 2rem; /* Jarak antar item dalam daftar */
+  list-style: none; /* Menghilangkan bullet point pada daftar */
+  margin-left: -2rem; /* Margin kiri untuk menyelaraskan daftar */
+}
+
+@media (max-width: 769px) {
+  .mobile-menu {
+    display: block; /* Menampilkan menu mobile pada layar kecil */
+  }
+}

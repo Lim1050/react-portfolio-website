@@ -1,0 +1,140 @@
+.logo {
+  width: 12rem; /* Lebar logo */
+  height: auto; /* Tinggi otomatis biar proporsi tidak rusak */
+}
+
+.nav-wrapper {
+  background: rgba(0, 0, 0, 0.1); /* Warna latar belakang navbar */
+  padding: 0.5rem 0; /* Padding atas dan bawah navbar */
+  position: sticky; /* Posisi tetap di atas halaman */
+  z-index: 30; /* Z-index untuk menempatkan di atas elemen lain */
+  backdrop-filter: blur(50px); /* Efek blur pada latar belakang */
+}
+
+.nav-content {
+  max-width: 1300px; /* Lebar maksimum konten navbar */
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  align-items: center; /* Menyelaraskan item di tengah secara vertikal */
+  justify-content: space-between; /* Menyebar item di antara ruang yang tersedia */
+  padding: 1rem 0; /* Padding atas dan bawah konten navbar */
+  margin: 0 auto; /* Margin otomatis untuk pusatkan konten */
+}
+
+.nav-content ul {
+  display: flex; /* Menggunakan flexbox untuk tata letak item dalam daftar */
+  align-items: center; /* Menyelaraskan item di tengah secara vertikal */
+  gap: 0.5rem; /* Jarak antar item dalam daftar */
+  list-style: none; /* Menghilangkan bullet point pada daftar */
+}
+
+.nav-content li {
+  margin: 0 1.5rem; /* Margin horizontal antar item dalam daftar */
+}
+
+.menu-item {
+  text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+  font-size: 0.9rem; /* Ukuran font untuk item menu */
+  font-weight: 500; /* Ketebalan font untuk item menu */
+  color: #fff; /* Warna teks item menu */
+  position: relative; /* Posisi relatif untuk efek hover */
+  cursor: pointer; /* Kursor pointer saat hover pada item menu */
+}
+
+.menu-item::before {
+  content: ""; /* Konten kosong untuk efek hover */
+  width: 2rem; /* Lebar garis bawah */
+  height: 0.2rem; /* Tinggi garis bawah */
+  background: linear-gradient(
+    90deg,
+    #a993fe 0%,
+    #7e61e7 100%
+  ); /* Warna garis bawah */
+  border-radius: 0.5rem; /* Sudut melengkung pada garis bawah */
+  position: absolute; /* Posisi absolut untuk garis bawah */
+  bottom: -0.6rem; /* Posisi garis bawah di bawah teks */
+  opacity: 0; /* Awalnya tidak terlihat */
+  transform: translateX(-1.5rem);
+  transition: all 0.3s ease; /* Transisi untuk efek hover */
+}
+
+.menu-item:hover::before {
+  width: 100%;
+  transform: translateX(0); /* Mengembalikan posisi garis bawah ke teks */
+  opacity: 1; /* Menampilkan garis bawah saat hover */
+}
+
+.contact-btn {
+  font-size: 0.9rem; /* Ukuran font untuk tombol kontak */
+  font-weight: 500; /* Ketebalan font untuk tombol kontak */
+  display: flex; /* Menggunakan flexbox untuk tata letak tombol kontak */
+  align-items: center; /* Menyelaraskan item di tengah secara vertikal */
+  justify-content: center; /* Menyebar item di tengah secara horizontal */
+  color: #fff; /* Warna teks tombol kontak */
+  background: linear-gradient(
+    90deg,
+    #a993fe 0%,
+    #7e61e7 100%
+  ); /* Warna latar belakang tombol kontak */
+  padding: 0.6rem 2rem; /* Padding atas dan bawah tombol kontak */
+  border: none; /* Menghilangkan border pada tombol kontak */
+  outline: 1.5px solid transparent; /* Garis luar tombol kontak */
+  border-radius: 0.2rem; /* Sudut melengkung pada tombol kontak */
+  cursor: pointer; /* Kursor pointer saat hover pada tombol kontak */
+  transition: all 0.3s ease; /* Transisi untuk efek hover pada tombol kontak */
+}
+
+.contact-btn:hover {
+  color: #a993fe; /* Mengubah warna teks menjadi ungu saat hover */
+  background: #000; /* Mengubah latar belakang menjadi transparan saat hover */
+  outline: 1.5px solid #a993fe; /* Garis luar saat hover pada tombol kontak */
+}
+
+.menu-btn {
+  width: 2.5rem; /* Lebar tombol menu */
+  height: 2.5rem; /* Tinggi tombol menu */
+  font-size: 1.5rem; /* Ukuran font untuk ikon menu */
+  display: flex; /* Menggunakan flexbox untuk tata letak tombol menu */
+  align-items: center; /* Menyelaraskan item di tengah secara vertikal */
+  justify-content: center; /* Menyebar item di tengah secara horizontal */
+  border: none; /* Menghilangkan border pada tombol menu */
+  border-radius: 0.4rem; /* Sudut melengkung pada tombol menu */
+  color: #fff; /* Warna teks tombol menu */
+  background: linear-gradient(
+    90deg,
+    #a993fe -0.13%,
+    #7e61e7 99.87%
+  ); /* Warna latar belakang tombol menu */
+  line-height: 0; /* Menghilangkan tinggi garis pada tombol menu */
+  cursor: pointer; /* Kursor pointer saat hover pada tombol menu */
+  transition: all 0.4s ease; /* Transisi untuk efek hover pada tombol menu */
+  display: none; /* Menyembunyikan tombol menu pada tampilan desktop */
+}
+
+.menu-btn:hover {
+  color: #a993fe; /* Mengubah warna teks menjadi ungu saat hover */
+  background: #000; /* Mengubah latar belakang menjadi transparan saat hover */
+  border: 1px solid #a993fe; /* Garis luar saat hover pada tombol menu */
+}
+
+@media (max-width: 425px) {
+  .logo {
+    width: 10rem; /* Lebar logo pada tampilan mobile */
+    height: auto; /* Tinggi otomatis biar proporsi tidak rusak */
+  }
+}
+
+@media (max-width: 769px) {
+  .menu-btn {
+    display: block; /* Menampilkan tombol menu pada tampilan mobile */
+  }
+
+  .nav-content ul {
+    display: none; /* Menyembunyikan daftar menu pada tampilan mobile */
+  }
+}
+
+@media (max-width: 1325px) {
+  .nav-wrapper {
+    padding: 0 2rem; /* Padding atas dan bawah navbar pada tampilan mobile */
+  }
+}
